@@ -179,10 +179,10 @@
 </pre></div>
 
 
-<p>This query shows me the size distribution for all companies. As it turns out, the average company that I've interviewed with has between 51 and 200 employees. I should point out, that the research in this project wass aimed at descriptive statistics rather than predictive statistics. So I know that the average company I've interviewed with is relatively small, but that doesn't exactly tell me why this is the case.</p>
+<p>This query shows me the size distribution for all companies. As it turns out, the average company that I've interviewed with has between 51 and 200 employees. I should point out, that the research in this project was aimed at descriptive statistics rather than predictive statistics. So I know that the average company I've interviewed with is relatively small, but that doesn't exactly tell me why this is the case.</p>
 <p>To generate visualizations, I connected my MySQL database to R using the RMySQL library, and I used the ggplot2 library to graphically represent the results.</p>
 <p><img alt="" src="static/images/sizeDistMultiPlot5.png" /></p>
-<p>As you can see the size distribution for the companies that I have interviewed with is more skewed towards smaller companies.</p>
+<p>As you can see, the size distribution for the companies that I have interviewed with is more skewed towards smaller companies.</p>
 <p>For the sake of learning ggplot2, here is the output regarding the ratio of interviewers by gender and the rate of interviews over time:</p>
 <p>My variable in R:</p>
 <div class="codehilite"><pre>intOverTime <span class="o">&lt;-</span> dbGetQuery<span class="p">(</span>con<span class="p">,</span> <span class="s">&quot;SELECT count(*) AS Count, MonthName(date) AS Month FROM interview GROUP BY Month(date)&quot;</span><span class="p">)</span>
