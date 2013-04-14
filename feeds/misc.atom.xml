@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Alesha Summers</title><link href="http://aleshasummers.com/" rel="alternate"></link><link href="http://aleshasummers.com/feeds/misc.atom.xml" rel="self"></link><id>http://aleshasummers.com/</id><updated>2013-01-15T00:00:00+01:00</updated><entry><title>Data Analysis on a Personal Level</title><link href="http://aleshasummers.com/data-analysis-on-a-personal-level.html" rel="alternate"></link><updated>2013-01-15T00:00:00+01:00</updated><author><name>Alesha Summers</name></author><id>tag:aleshasummers.com,2013-01-15:data-analysis-on-a-personal-level.html</id><summary type="html">&lt;p&gt;I just completed a project that has taught me quite a bit about designing and implementing an experiment. I want to break the write up of this project into several manageable pieces that I hope will be insightful. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Introduction:&lt;/strong&gt; Background information on how this project came about and what I hoped to accomplish in completing it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Collection, Cleaning and Integration:&lt;/strong&gt; Describes details of what information was collected and how it was organized to reflect the goals of this project.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Mining and Visualizations:&lt;/strong&gt; Introduces some of the scripts and their resulting graphs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Analysis and Conclusions:&lt;/strong&gt; Final thoughts and reflections on the process and outcomes.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;Many people emphasize how important it is to set the stage for the rest of your career by making sure that your first job puts you in the right playing field. Like many of my fellow, recent graduates, entering the job market on the right foot is not as easy as it seems. To add to that, I've deviated away from the type of career I had originally planned on doing. So now it's up to me to guide my own learning path and build up my own experience from scratch. &lt;/p&gt;
+&lt;p&gt;For the past six months, I've met with companies to try to find the right organization to work with. I've learned a lot about what I expect from companies and what they expect from me in return. I've also learned a lot about what I can expect from myself, which has helped me to find the right mix of learning materials and projects to work on that will help me solidify the things I've learned.&lt;/p&gt;
+&lt;p&gt;I am naturally a curious person, and I like to ask questions especially in interviews. Asking questions during an interview is important for me so that I know whether or not I would like to work with a company. During interviews, I made notes and then stored that information in text files. Until a few weeks ago when I was thinking about what kinds of data analysis projects I want to do, I didn't have any intentions to do anything with this data. When I looked back in my files, I realized that I had a lot of useful data that could be put to good use for analyzing. This was the inspiration for this project. I decided that I would store this information in a database, use R to run some stats on the information and create visualizations that would help me have a better understanding of the data that I collected.&lt;/p&gt;
+&lt;p&gt;I decided to pursue the project for 2 reasons. First, doing my own research and analysis is good for gaining experience in developing and implementing an experiment from start to finish. The second reason I decided to pursue this project is because the results from the analysis should help me to have better insights of what things I can do to improve my chances of being picked by the right company. In addition, the goal was to discover what types of companies I should focus on, based on the information I have gathered.&lt;/p&gt;
+&lt;h1&gt;&lt;strong&gt;Data Collection, Cleaning and Integration&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;Now I want to focus more on the details of what kinds of data I collected, and how I organized it.&lt;/p&gt;
+&lt;p&gt;There are 5 areas that I think are important to keep track of when searching for a job:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Companies/Industries&lt;/li&gt;
+&lt;li&gt;Positions&lt;/li&gt;
+&lt;li&gt;Interviews/Interviewers&lt;/li&gt;
+&lt;li&gt;Networks&lt;/li&gt;
+&lt;li&gt;Documents&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It's important to keep track of which companies you've interviewed with, which people you have been interviewed by, the jobs you have applied for, the documents that you have sent, and the depth of your networks. These areas give you a feel for what people are looking for and can help to focus your efforts on the things that have the highest impact on whether or not you will be able to find what you are looking for. &lt;/p&gt;
+&lt;p&gt;From these 5 basic areas, I developed a MySQL database schema to capture the important pieces of information. For example, with regard to a specific company it's important to know what year the company was founded, the industry, the number of employees, and whether or not the company is profitable. These pieces of information give you an idea of where a company is in the company life cycle. &lt;/p&gt;
+&lt;p&gt;With regard to documents, you might want to know if you sent a company your GitHub profile, or if you just sent them your CV and a cover letter. Depending on the position, some companies want to see more samples of your work. By keeping track of documents and how they relate to your interaction with companies you can get a feel for which ones are the most effective at grabbing someone's attention. &lt;/p&gt;
+&lt;p&gt;With regard to the interview process you may want to know the date of the interview, how many times you have interviewed with a company, the place that you interviewed (e.g. a coffee shop), the time period in which the company is looking to make a final decision, the decision of the interview, the reason for either hiring or not hiring you, and the method of contact (e.g. through a friend).&lt;/p&gt;
+&lt;p&gt;In this project, I analyzed my job search process on 19 different attributes, some of which I just mentioned. From this information that I have collected, I can ask myself several important questions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is the average size of the company that I have/haven't had an interview with?&lt;/li&gt;
+&lt;li&gt;What method of contact is most likely to lead to an interview?&lt;/li&gt;
+&lt;li&gt;How significant is industry in determining whether or not I get called in for an interview?&lt;/li&gt;
+&lt;li&gt;What is the ratio of women to men who have interviewed me?&lt;/li&gt;
+&lt;li&gt;How has the frequency of interviews changed over time?&lt;/li&gt;
+&lt;li&gt;Is there a relationship between the occupation of the person interviewing me and the response of the interview? &lt;/li&gt;
+&lt;li&gt;What is the most common reason for being accepted/turned down?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Due to various circumstances, I didn't start out with the same data for every company I contacted. For example, there are some companies that I've had multiple interviews with. Therefore, I have more information about those companies, but that's okay because the problems associated with inconsistent data resemble a realistic situation. Real world data comes in all shapes, sizes, and qualities. In an effort to make my data more consistent, I did some company research to get missing pieces of information. &lt;/p&gt;
+&lt;p&gt;Since I stored my data in a text format, I had to convert it to CSV before I could load it into MySQL. Even after I converted all of my data into CSV, I still had some issues with the layout of my data. Some information had to be reformatted in a way that could be properly queried. For example, whether or not I sent a company my CV was represented by the string 'yes' or 'no,' but it had to be changed to 0s and 1s so that I could treat the values as booleans. Thankfully, I wrote a dump file so that I could easily tear down and build up the database in the event that I found something weird in my files that didn't belong. Here's a sample:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;DROP&lt;/span&gt; &lt;span class="n"&gt;DATABASE&lt;/span&gt; &lt;span class="n"&gt;IF&lt;/span&gt; &lt;span class="n"&gt;EXISTS&lt;/span&gt; &lt;span class="n"&gt;prospectsDB&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;DATABASE&lt;/span&gt; &lt;span class="n"&gt;prospectsDB&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;USE&lt;/span&gt; &lt;span class="n"&gt;prospectsDB&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="n"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;foreign_key_checks&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; 0&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="n"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;IF&lt;/span&gt; &lt;span class="n"&gt;NOT&lt;/span&gt; &lt;span class="n"&gt;EXISTS&lt;/span&gt;
+&lt;span class="n"&gt;company&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+  &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="n"&gt;SMALLINT&lt;/span&gt; &lt;span class="n"&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PRIMARY&lt;/span&gt; &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+  &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="n"&gt;VARCHAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;100&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;NOT&lt;/span&gt; &lt;span class="n"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;year_founded&lt;/span&gt; &lt;span class="n"&gt;YEAR&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="n"&gt;size_id&lt;/span&gt; &lt;span class="n"&gt;TINYINT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;FOREIGN&lt;/span&gt; &lt;span class="n"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;size_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;REFERENCES&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+  &lt;span class="n"&gt;profitability_status&lt;/span&gt; &lt;span class="n"&gt;VARCHAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;3&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now that I have all of my data in one place, it's time to take a look.&lt;/p&gt;
+&lt;p&gt;The Schema:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;show&lt;/span&gt; &lt;span class="n"&gt;tables&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;+-----------------------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Tables_in_prospectsdb&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-----------------------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;company&lt;/span&gt;               &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;company_industry&lt;/span&gt;      &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;company_interview&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;company_interviewer&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;company_job_title&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;documents&lt;/span&gt;             &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;industry&lt;/span&gt;              &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;interview&lt;/span&gt;             &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;interview_network&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;interviewer&lt;/span&gt;           &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;job_title&lt;/span&gt;             &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;network&lt;/span&gt;               &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;                  &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+-----------------------+&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The size table which represents the number of employees:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;FROM&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt; &lt;span class="n"&gt;ORDER&lt;/span&gt; &lt;span class="n"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;+----+------------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+----+------------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;  1 &lt;span class="o"&gt;|&lt;/span&gt; 1&lt;span class="o"&gt;-&lt;/span&gt;10       &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;  2 &lt;span class="o"&gt;|&lt;/span&gt; 11&lt;span class="o"&gt;-&lt;/span&gt;50      &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;  3 &lt;span class="o"&gt;|&lt;/span&gt; 51&lt;span class="o"&gt;-&lt;/span&gt;200     &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;  4 &lt;span class="o"&gt;|&lt;/span&gt; 201&lt;span class="o"&gt;-&lt;/span&gt;500    &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;  5 &lt;span class="o"&gt;|&lt;/span&gt; 501&lt;span class="o"&gt;-&lt;/span&gt;1000   &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;  6 &lt;span class="o"&gt;|&lt;/span&gt; 1001&lt;span class="o"&gt;-&lt;/span&gt;5000  &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;  7 &lt;span class="o"&gt;|&lt;/span&gt; 5001&lt;span class="o"&gt;-&lt;/span&gt;10000 &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;  8 &lt;span class="o"&gt;|&lt;/span&gt; 10001&lt;span class="o"&gt;+&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+----+------------+&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;&lt;strong&gt;Data Mining and Visualization&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;At first I tried to implement the project in SQLite, but after I ran into a few problems with my CSV files not being correctly imported, I decided I would switch over to MySQL. &lt;/p&gt;
+&lt;p&gt;Querying is probably one of the most fun things about the project because it's like putting a quarter into a machine and getting out a surprise toy. You don't know what you are going to get out of the data until you've poked around a little bit.  Here is a sample query:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;SELECT&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;size&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;AS&lt;/span&gt; &lt;span class="n"&gt;frequency&lt;/span&gt;
+&lt;span class="n"&gt;FROM&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt; &lt;span class="n"&gt;LEFT&lt;/span&gt; &lt;span class="n"&gt;JOIN&lt;/span&gt; &lt;span class="n"&gt;company&lt;/span&gt; &lt;span class="n"&gt;ON&lt;/span&gt; &lt;span class="n"&gt;company&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size_id&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;
+&lt;span class="n"&gt;GROUP&lt;/span&gt; &lt;span class="n"&gt;BY&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="n"&gt;ORDER&lt;/span&gt; &lt;span class="n"&gt;BY&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="n"&gt;ASC&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="o"&gt;+------------+-----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;frequency&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+------------+-----------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; 1&lt;span class="o"&gt;-&lt;/span&gt;10       &lt;span class="o"&gt;|&lt;/span&gt;         4 &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; 11&lt;span class="o"&gt;-&lt;/span&gt;50      &lt;span class="o"&gt;|&lt;/span&gt;         6 &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; 51&lt;span class="o"&gt;-&lt;/span&gt;200     &lt;span class="o"&gt;|&lt;/span&gt;        15 &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; 201&lt;span class="o"&gt;-&lt;/span&gt;500    &lt;span class="o"&gt;|&lt;/span&gt;         3 &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; 501&lt;span class="o"&gt;-&lt;/span&gt;1000   &lt;span class="o"&gt;|&lt;/span&gt;         3 &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; 1001&lt;span class="o"&gt;-&lt;/span&gt;5000  &lt;span class="o"&gt;|&lt;/span&gt;         1 &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; 5001&lt;span class="o"&gt;-&lt;/span&gt;10000 &lt;span class="o"&gt;|&lt;/span&gt;         2 &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; 10001&lt;span class="o"&gt;+&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt;         1 &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+------------+-----------+&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This query shows me the size distribution for all companies. As it turns out, the average company that I've interviewed with has between 51 and 200 employees. I should point out, that the research in this project wass aimed at descriptive statistics rather than predictive statistics. So I know that the average company I've interviewed with is relatively small, but that doesn't exactly tell me why this is the case.&lt;/p&gt;
+&lt;p&gt;To generate visualizations, I connected my MySQL database to R using the RMySQL library, and I used the ggplot2 library to graphically represent the results.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/images/sizeDistMultiPlot5.png" /&gt;&lt;/p&gt;
+&lt;p&gt;As you can see the size distribution for the companies that I have interviewed with is more skewed towards smaller companies.&lt;/p&gt;
+&lt;p&gt;For the sake of learning ggplot2, here is the output regarding the ratio of interviewers by gender and the rate of interviews over time:&lt;/p&gt;
+&lt;p&gt;My variable in R:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;intOverTime &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; dbGetQuery&lt;span class="p"&gt;(&lt;/span&gt;con&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;SELECT count(*) AS Count, MonthName(date) AS Month FROM interview GROUP BY Month(date)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="" src="/images/interviewsOverTime.png" /&gt;&lt;/p&gt;
+&lt;p&gt;The intOverTime plot:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;intOverTimePlot &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; ggplot&lt;span class="p"&gt;(&lt;/span&gt;data&lt;span class="o"&gt;=&lt;/span&gt;intOverTime&lt;span class="p"&gt;,&lt;/span&gt; aes&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="o"&gt;=&lt;/span&gt;factor&lt;span class="p"&gt;(&lt;/span&gt;Month&lt;span class="p"&gt;,&lt;/span&gt; levels&lt;span class="o"&gt;=&lt;/span&gt;c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;May&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;June&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;July&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;August&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;September&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;October&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;November&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;December&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; ordered&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;TRUE&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; y&lt;span class="o"&gt;=&lt;/span&gt;Count&lt;span class="p"&gt;,&lt;/span&gt; group&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; geom_line&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; xlab&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Months&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; ylab&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Count&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; ggtitle&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Number of Interviews&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;My variable in R:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;mTw &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; dbGetQuery&lt;span class="p"&gt;(&lt;/span&gt;con&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;SELECT gender AS Gender, count(*) AS Count FROM interviewer GROUP BY gender ORDER BY Count DESC&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="" src="/images/menToWomen.png" /&gt;&lt;/p&gt;
+&lt;p&gt;The mTw plot:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;mTwPlot &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; ggplot&lt;span class="p"&gt;(&lt;/span&gt;data&lt;span class="o"&gt;=&lt;/span&gt;mTw&lt;span class="p"&gt;,&lt;/span&gt; aes&lt;span class="p"&gt;(&lt;/span&gt;x&lt;span class="o"&gt;=&lt;/span&gt;factor&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; y&lt;span class="o"&gt;=&lt;/span&gt;Count&lt;span class="p"&gt;,&lt;/span&gt;fill&lt;span class="o"&gt;=&lt;/span&gt;factor&lt;span class="p"&gt;(&lt;/span&gt;Gender&lt;span class="p"&gt;)))&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; geom_bar&lt;span class="p"&gt;(&lt;/span&gt;width&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;stat&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;identity&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; 
+xlab&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; ylab&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;
+coord_polar&lt;span class="p"&gt;(&lt;/span&gt;theta&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; labs&lt;span class="p"&gt;(&lt;/span&gt;fill&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Gender&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; ggtitle&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Ratio of Interviewers by Gender&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; scale_fill_discrete&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Gender&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;labels&lt;span class="o"&gt;=&lt;/span&gt;c&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Female&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Male&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;These are just a few of the graphs that I created. Pretty simple stuff, but considering that 8 months ago my technical skills were nonexistent, it shows how far I've progressed in my learning.&lt;/p&gt;
+&lt;p&gt;Quick rundown of useful stats using Rs mean(), sd(), and cor() functions:&lt;/p&gt;
+&lt;p&gt;Mean age of all companies: 8.03 years&lt;/p&gt;
+&lt;p&gt;Mean age of interviewed companies: 3.54 years&lt;/p&gt;
+&lt;p&gt;Mean age of non-interviewed companies: 10.8 years&lt;/p&gt;
+&lt;p&gt;Standard deviation of age of all companies: 10.08 years&lt;/p&gt;
+&lt;p&gt;Standard deviation age of interviewed companies: 3.4 years&lt;/p&gt;
+&lt;p&gt;Standard deviation age of non-interviewed companies: 11.8 years&lt;/p&gt;
+&lt;p&gt;Size 2 represents the range from 11-50 employees, size 3 represents the range from 51-200 employees, and size 4 represents the range from 201-500 employees.&lt;/p&gt;
+&lt;p&gt;Mean size of all companies: 3.18&lt;/p&gt;
+&lt;p&gt;Mean size of interviewed companies: 2.46&lt;/p&gt;
+&lt;p&gt;Mean size of non-interviewed companies: 3.62&lt;/p&gt;
+&lt;p&gt;Standard deviation of size of all companies: 1.53&lt;/p&gt;
+&lt;p&gt;Standard deviation size of interviewed companies: 1.13&lt;/p&gt;
+&lt;p&gt;Standard deviation size of non-interviewed companies: 1.57&lt;/p&gt;
+&lt;p&gt;Correlation between the age and the size of all companies: 68.7%&lt;/p&gt;
+&lt;p&gt;Correlation between the age and the size of interviewed companies: 75.5%&lt;/p&gt;
+&lt;p&gt;Correlation between the age and the size of non-interviewed companies: 65.4%&lt;/p&gt;
+&lt;h1&gt;&lt;strong&gt;Analysis and Conclusions&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;The summary statistics show the stark contrast between the companies that I have interviewed with versus the companies that I have not had interviews with (i.e. the companies who I have applied to but not granted an interview with). Compared to the non-interviewed companies the companies that I did interview with are about 32% smaller and 67% younger, but I suppose my sample is quite a bit more biased than the population given that there are a great number of start-ups in my area.&lt;/p&gt;
+&lt;p&gt;From a design and implementation perspective, I've learned a great deal about relational database design best practices, dealing with data types and formatting, and about writing scripts to retrieve relevant information. In addition, it's always a bit tricky navigating new packages or libraries for the first time. RMySQL and ggplot2 are common and standard, but I had no knowledge of them at the onset of this project. Luckily, R has an abundance of documentation and resources to get help. I have found that the more I do the easier it is to find solutions to problems and understand the reasoning behind my mistakes.&lt;/p&gt;
+&lt;p&gt;From a research perspective this project has helped me to understand which methods of contact are more effective for connecting with the right people and showing me in which areas I can improve. For example, the most common reason for not being hired is my lack of seniority. This can only be fixed by time. The second most common reason for not being hired after an interview is that there existed a lack of mutual agreement. In my case, this was often regarding the type of contract. For example, many companies that I've interviewed with are looking only for interns, which turns out to be about a 6 month contract, and I am looking for a full-time position. Because of this disagreement, further negotiations were not pursued. Given this information, I have some leeway in how I decide to make decisions in the future.&lt;/p&gt;
+&lt;p&gt;This project has been interesting because I had the chance to personally collect the data, and because the results are directly applicable to what I am trying to accomplish - gaining experience in data analysis, and starting my career.  &lt;/p&gt;</summary></entry><entry><title>A Random Restaurant Generator using SQLite</title><link href="http://aleshasummers.com/a-random-restaurant-generator-using-sqlite.html" rel="alternate"></link><updated>2012-11-20T00:00:00+01:00</updated><author><name>Alesha Summers</name></author><id>tag:aleshasummers.com,2012-11-20:a-random-restaurant-generator-using-sqlite.html</id><summary type="html">&lt;p&gt;I've always had the problem of not being able to choose what I want for dinner. I decided I would create a small database of restaurants in my area and have SQLite choose one for me randomly.  I used &lt;a href="http://zetcode.com/databases/sqlitetutorial"&gt;this tutorial&lt;/a&gt; as a reference.&lt;/p&gt;
+&lt;p&gt;I created a table for all the restuarants with information like the name of the restaurant, approximate distance from where I live, relative price range, and type of cuisine, since those were the most important factors for me in making a decision.  No need for normalization here, just a quick list of restaurants that can be picked from randomly.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;CREATE&lt;/span&gt; &lt;span class="n"&gt;TABLE&lt;/span&gt; &lt;span class="n"&gt;restaurants&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="n"&gt;integer&lt;/span&gt; &lt;span class="n"&gt;primary&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cuisine&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;proximity&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;priceRange&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then it was time to fill the table with some neighborhood restaurants.  For example,&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;INSERT&lt;/span&gt; &lt;span class="n"&gt;INTO&lt;/span&gt; &lt;span class="n"&gt;restaurants&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cuisine&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;proximity&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;priceRange&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;VALUES&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;1&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;McDonalds&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;burgers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;short&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cheap&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After the table contains some restaurants, it's easy to pick one randomly with the following SQL query&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="n"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;Restaurants&lt;/span&gt; &lt;span class="n"&gt;ORDER&lt;/span&gt; &lt;span class="n"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="n"&gt;LIMIT&lt;/span&gt; 1&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is an easy way to get a random restaurant from the table, but it can also be extended to exclude values that aren't matching any preferences I happen to have at the moment&lt;/p&gt;
+&lt;p&gt;A few friends wondered why I didn't just download an app that already exists for this very purpose (e.g., Urbanspoon), but sometimes it's just more fun (not to mention good practice) to build things yourself.&lt;/p&gt;</summary></entry><entry><title>Test</title><link href="http://aleshasummers.com/test.html" rel="alternate"></link><updated>2012-08-26T00:00:00+02:00</updated><author><name>Alesha Summers</name></author><id>tag:aleshasummers.com,2012-08-26:test.html</id><summary type="html"></summary></entry></feed>

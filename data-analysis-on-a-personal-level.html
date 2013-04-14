@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Data Analysis on a Personal Level</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
+        
+        <link href="http://aleshasummers.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Alesha Summers Atom Feed" />
+        
+        
+
+        <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <!--[if lte IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="./css/ie.css"/>
+                <script src="./js/IE8.js" type="text/javascript"></script><![endif]-->
+
+        <!--[if lt IE 7]>
+                <link rel="stylesheet" type="text/css" media="all" href="./css/ie6.css"/><![endif]-->
+
+</head>
+
+<body id="index" class="home">
+
+        <header id="banner" class="body">
+                <h1><a href=".">Alesha Summers </a></h1>
+                <nav><ul>
+                
+                
+                
+                    <li><a href="./pages/about.html">About</a></li>
+                
+                
+<!--                
+                    <li class="active"><a href="./category/misc.html">misc</a></li>
+                 -->
+                </ul></nav>
+        </header><!-- /#banner -->
+        
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="data-analysis-on-a-personal-level.html" rel="bookmark"
+           title="Permalink to Data Analysis on a Personal Level">Data Analysis on a Personal Level</a></h1>
+      
+    </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2013-01-15T00:00:00">
+                Tue 15 January 2013
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href="./author/alesha-summers.html">Alesha Summers</a>
+        </address>
+        
+<p>In <a href="./category/misc.html">misc</a>. </p>
+
+
+
+</footer><!-- /.post-info -->
+      <p>I just completed a project that has taught me quite a bit about designing and implementing an experiment. I want to break the write up of this project into several manageable pieces that I hope will be insightful. </p>
+<ol>
+<li><strong>Introduction:</strong> Background information on how this project came about and what I hoped to accomplish in completing it.</li>
+<li><strong>Data Collection, Cleaning and Integration:</strong> Describes details of what information was collected and how it was organized to reflect the goals of this project.</li>
+<li><strong>Data Mining and Visualizations:</strong> Introduces some of the scripts and their resulting graphs.</li>
+<li><strong>Analysis and Conclusions:</strong> Final thoughts and reflections on the process and outcomes.</li>
+</ol>
+<h1><strong>Introduction</strong></h1>
+<p>Many people emphasize how important it is to set the stage for the rest of your career by making sure that your first job puts you in the right playing field. Like many of my fellow, recent graduates, entering the job market on the right foot is not as easy as it seems. To add to that, I've deviated away from the type of career I had originally planned on doing. So now it's up to me to guide my own learning path and build up my own experience from scratch. </p>
+<p>For the past six months, I've met with companies to try to find the right organization to work with. I've learned a lot about what I expect from companies and what they expect from me in return. I've also learned a lot about what I can expect from myself, which has helped me to find the right mix of learning materials and projects to work on that will help me solidify the things I've learned.</p>
+<p>I am naturally a curious person, and I like to ask questions especially in interviews. Asking questions during an interview is important for me so that I know whether or not I would like to work with a company. During interviews, I made notes and then stored that information in text files. Until a few weeks ago when I was thinking about what kinds of data analysis projects I want to do, I didn't have any intentions to do anything with this data. When I looked back in my files, I realized that I had a lot of useful data that could be put to good use for analyzing. This was the inspiration for this project. I decided that I would store this information in a database, use R to run some stats on the information and create visualizations that would help me have a better understanding of the data that I collected.</p>
+<p>I decided to pursue the project for 2 reasons. First, doing my own research and analysis is good for gaining experience in developing and implementing an experiment from start to finish. The second reason I decided to pursue this project is because the results from the analysis should help me to have better insights of what things I can do to improve my chances of being picked by the right company. In addition, the goal was to discover what types of companies I should focus on, based on the information I have gathered.</p>
+<h1><strong>Data Collection, Cleaning and Integration</strong></h1>
+<p>Now I want to focus more on the details of what kinds of data I collected, and how I organized it.</p>
+<p>There are 5 areas that I think are important to keep track of when searching for a job:</p>
+<ul>
+<li>Companies/Industries</li>
+<li>Positions</li>
+<li>Interviews/Interviewers</li>
+<li>Networks</li>
+<li>Documents</li>
+</ul>
+<p>It's important to keep track of which companies you've interviewed with, which people you have been interviewed by, the jobs you have applied for, the documents that you have sent, and the depth of your networks. These areas give you a feel for what people are looking for and can help to focus your efforts on the things that have the highest impact on whether or not you will be able to find what you are looking for. </p>
+<p>From these 5 basic areas, I developed a MySQL database schema to capture the important pieces of information. For example, with regard to a specific company it's important to know what year the company was founded, the industry, the number of employees, and whether or not the company is profitable. These pieces of information give you an idea of where a company is in the company life cycle. </p>
+<p>With regard to documents, you might want to know if you sent a company your GitHub profile, or if you just sent them your CV and a cover letter. Depending on the position, some companies want to see more samples of your work. By keeping track of documents and how they relate to your interaction with companies you can get a feel for which ones are the most effective at grabbing someone's attention. </p>
+<p>With regard to the interview process you may want to know the date of the interview, how many times you have interviewed with a company, the place that you interviewed (e.g. a coffee shop), the time period in which the company is looking to make a final decision, the decision of the interview, the reason for either hiring or not hiring you, and the method of contact (e.g. through a friend).</p>
+<p>In this project, I analyzed my job search process on 19 different attributes, some of which I just mentioned. From this information that I have collected, I can ask myself several important questions:</p>
+<ul>
+<li>What is the average size of the company that I have/haven't had an interview with?</li>
+<li>What method of contact is most likely to lead to an interview?</li>
+<li>How significant is industry in determining whether or not I get called in for an interview?</li>
+<li>What is the ratio of women to men who have interviewed me?</li>
+<li>How has the frequency of interviews changed over time?</li>
+<li>Is there a relationship between the occupation of the person interviewing me and the response of the interview? </li>
+<li>What is the most common reason for being accepted/turned down?</li>
+</ul>
+<p>Due to various circumstances, I didn't start out with the same data for every company I contacted. For example, there are some companies that I've had multiple interviews with. Therefore, I have more information about those companies, but that's okay because the problems associated with inconsistent data resemble a realistic situation. Real world data comes in all shapes, sizes, and qualities. In an effort to make my data more consistent, I did some company research to get missing pieces of information. </p>
+<p>Since I stored my data in a text format, I had to convert it to CSV before I could load it into MySQL. Even after I converted all of my data into CSV, I still had some issues with the layout of my data. Some information had to be reformatted in a way that could be properly queried. For example, whether or not I sent a company my CV was represented by the string 'yes' or 'no,' but it had to be changed to 0s and 1s so that I could treat the values as booleans. Thankfully, I wrote a dump file so that I could easily tear down and build up the database in the event that I found something weird in my files that didn't belong. Here's a sample:</p>
+<div class="codehilite"><pre><span class="n">DROP</span> <span class="n">DATABASE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">prospectsDB</span><span class="p">;</span>
+<span class="n">CREATE</span> <span class="n">DATABASE</span> <span class="n">prospectsDB</span><span class="p">;</span>
+<span class="n">USE</span> <span class="n">prospectsDB</span><span class="p">;</span>
+
+<span class="n">SET</span> <span class="n">foreign_key_checks</span> <span class="p">=</span> 0<span class="p">;</span>
+
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">NOT</span> <span class="n">EXISTS</span>
+<span class="n">company</span><span class="p">(</span>
+  <span class="n">id</span> <span class="n">SMALLINT</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">(</span><span class="n">id</span><span class="p">),</span>
+  <span class="n">name</span> <span class="n">VARCHAR</span><span class="p">(</span>100<span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
+  <span class="n">year_founded</span> <span class="n">YEAR</span><span class="p">,</span>
+  <span class="n">size_id</span> <span class="n">TINYINT</span><span class="p">,</span> <span class="n">FOREIGN</span> <span class="n">KEY</span><span class="p">(</span><span class="n">size_id</span><span class="p">)</span> <span class="n">REFERENCES</span> <span class="nb">size</span><span class="p">(</span><span class="n">id</span><span class="p">),</span>
+  <span class="n">profitability_status</span> <span class="n">VARCHAR</span><span class="p">(</span>3<span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+
+
+<p>Now that I have all of my data in one place, it's time to take a look.</p>
+<p>The Schema:</p>
+<div class="codehilite"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">show</span> <span class="n">tables</span><span class="p">;</span>
+<span class="o">+-----------------------+</span>
+<span class="o">|</span> <span class="n">Tables_in_prospectsdb</span> <span class="o">|</span>
+<span class="o">+-----------------------+</span>
+<span class="o">|</span> <span class="n">company</span>               <span class="o">|</span>
+<span class="o">|</span> <span class="n">company_industry</span>      <span class="o">|</span>
+<span class="o">|</span> <span class="n">company_interview</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="n">company_interviewer</span>   <span class="o">|</span>
+<span class="o">|</span> <span class="n">company_job_title</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="n">documents</span>             <span class="o">|</span>
+<span class="o">|</span> <span class="n">industry</span>              <span class="o">|</span>
+<span class="o">|</span> <span class="n">interview</span>             <span class="o">|</span>
+<span class="o">|</span> <span class="n">interview_network</span>     <span class="o">|</span>
+<span class="o">|</span> <span class="n">interviewer</span>           <span class="o">|</span>
+<span class="o">|</span> <span class="n">job_title</span>             <span class="o">|</span>
+<span class="o">|</span> <span class="n">network</span>               <span class="o">|</span>
+<span class="o">|</span> <span class="nb">size</span>                  <span class="o">|</span>
+<span class="o">+-----------------------+</span>
+</pre></div>
+
+
+<p>The size table which represents the number of employees:</p>
+<div class="codehilite"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="nb">size</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">id</span><span class="p">;</span>
+<span class="o">+----+------------+</span>
+<span class="o">|</span> <span class="n">id</span> <span class="o">|</span> <span class="nb">size</span>       <span class="o">|</span>
+<span class="o">+----+------------+</span>
+<span class="o">|</span>  1 <span class="o">|</span> 1<span class="o">-</span>10       <span class="o">|</span>
+<span class="o">|</span>  2 <span class="o">|</span> 11<span class="o">-</span>50      <span class="o">|</span>
+<span class="o">|</span>  3 <span class="o">|</span> 51<span class="o">-</span>200     <span class="o">|</span>
+<span class="o">|</span>  4 <span class="o">|</span> 201<span class="o">-</span>500    <span class="o">|</span>
+<span class="o">|</span>  5 <span class="o">|</span> 501<span class="o">-</span>1000   <span class="o">|</span>
+<span class="o">|</span>  6 <span class="o">|</span> 1001<span class="o">-</span>5000  <span class="o">|</span>
+<span class="o">|</span>  7 <span class="o">|</span> 5001<span class="o">-</span>10000 <span class="o">|</span>
+<span class="o">|</span>  8 <span class="o">|</span> 10001<span class="o">+</span>     <span class="o">|</span>
+<span class="o">+----+------------+</span>
+</pre></div>
+
+
+<h1><strong>Data Mining and Visualization</strong></h1>
+<p>At first I tried to implement the project in SQLite, but after I ran into a few problems with my CSV files not being correctly imported, I decided I would switch over to MySQL. </p>
+<p>Querying is probably one of the most fun things about the project because it's like putting a quarter into a machine and getting out a surprise toy. You don't know what you are going to get out of the data until you've poked around a little bit.  Here is a sample query:</p>
+<div class="codehilite"><pre><span class="n">SELECT</span> <span class="nb">size</span><span class="p">,</span> <span class="n">count</span><span class="p">(</span><span class="nb">size</span><span class="p">)</span> <span class="n">AS</span> <span class="n">frequency</span>
+<span class="n">FROM</span> <span class="nb">size</span> <span class="n">LEFT</span> <span class="n">JOIN</span> <span class="n">company</span> <span class="n">ON</span> <span class="n">company</span><span class="p">.</span><span class="n">size_id</span> <span class="p">=</span> <span class="nb">size</span><span class="p">.</span><span class="n">id</span>
+<span class="n">GROUP</span> <span class="n">BY</span> <span class="nb">size</span><span class="p">.</span><span class="n">id</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="nb">size</span><span class="p">.</span><span class="n">id</span> <span class="n">ASC</span><span class="p">;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="o">+------------+-----------+</span>
+<span class="o">|</span> <span class="nb">size</span>       <span class="o">|</span> <span class="n">frequency</span> <span class="o">|</span>
+<span class="o">+------------+-----------+</span>
+<span class="o">|</span> 1<span class="o">-</span>10       <span class="o">|</span>         4 <span class="o">|</span>
+<span class="o">|</span> 11<span class="o">-</span>50      <span class="o">|</span>         6 <span class="o">|</span>
+<span class="o">|</span> 51<span class="o">-</span>200     <span class="o">|</span>        15 <span class="o">|</span>
+<span class="o">|</span> 201<span class="o">-</span>500    <span class="o">|</span>         3 <span class="o">|</span>
+<span class="o">|</span> 501<span class="o">-</span>1000   <span class="o">|</span>         3 <span class="o">|</span>
+<span class="o">|</span> 1001<span class="o">-</span>5000  <span class="o">|</span>         1 <span class="o">|</span>
+<span class="o">|</span> 5001<span class="o">-</span>10000 <span class="o">|</span>         2 <span class="o">|</span>
+<span class="o">|</span> 10001<span class="o">+</span>     <span class="o">|</span>         1 <span class="o">|</span>
+<span class="o">+------------+-----------+</span>
+</pre></div>
+
+
+<p>This query shows me the size distribution for all companies. As it turns out, the average company that I've interviewed with has between 51 and 200 employees. I should point out, that the research in this project wass aimed at descriptive statistics rather than predictive statistics. So I know that the average company I've interviewed with is relatively small, but that doesn't exactly tell me why this is the case.</p>
+<p>To generate visualizations, I connected my MySQL database to R using the RMySQL library, and I used the ggplot2 library to graphically represent the results.</p>
+<p><img alt="" src="static/images/sizeDistMultiPlot5.png" /></p>
+<p>As you can see the size distribution for the companies that I have interviewed with is more skewed towards smaller companies.</p>
+<p>For the sake of learning ggplot2, here is the output regarding the ratio of interviewers by gender and the rate of interviews over time:</p>
+<p>My variable in R:</p>
+<div class="codehilite"><pre>intOverTime <span class="o">&lt;-</span> dbGetQuery<span class="p">(</span>con<span class="p">,</span> <span class="s">&quot;SELECT count(*) AS Count, MonthName(date) AS Month FROM interview GROUP BY Month(date)&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="" src="static/images/interviewsOverTime.png" /></p>
+<p>The intOverTime plot:</p>
+<div class="codehilite"><pre>intOverTimePlot <span class="o">&lt;-</span> ggplot<span class="p">(</span>data<span class="o">=</span>intOverTime<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>factor<span class="p">(</span>Month<span class="p">,</span> levels<span class="o">=</span>c<span class="p">(</span><span class="s">&quot;May&quot;</span><span class="p">,</span><span class="s">&quot;June&quot;</span><span class="p">,</span><span class="s">&quot;July&quot;</span><span class="p">,</span><span class="s">&quot;August&quot;</span><span class="p">,</span><span class="s">&quot;September&quot;</span><span class="p">,</span><span class="s">&quot;October&quot;</span><span class="p">,</span><span class="s">&quot;November&quot;</span><span class="p">,</span><span class="s">&quot;December&quot;</span><span class="p">),</span> ordered<span class="o">=</span><span class="kc">TRUE</span><span class="p">),</span> y<span class="o">=</span>Count<span class="p">,</span> group<span class="o">=</span><span class="m">1</span><span class="p">))</span> <span class="o">+</span> geom_line<span class="p">()</span> <span class="o">+</span> xlab<span class="p">(</span><span class="s">&quot;Months&quot;</span><span class="p">)</span> <span class="o">+</span> ylab<span class="p">(</span><span class="s">&quot;Count&quot;</span><span class="p">)</span> <span class="o">+</span> ggtitle<span class="p">(</span><span class="s">&quot;Number of Interviews&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>My variable in R:</p>
+<div class="codehilite"><pre>mTw <span class="o">&lt;-</span> dbGetQuery<span class="p">(</span>con<span class="p">,</span> <span class="s">&quot;SELECT gender AS Gender, count(*) AS Count FROM interviewer GROUP BY gender ORDER BY Count DESC&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p><img alt="" src="static/images/menToWomen.png" /></p>
+<p>The mTw plot:</p>
+<div class="codehilite"><pre>mTwPlot <span class="o">&lt;-</span> ggplot<span class="p">(</span>data<span class="o">=</span>mTw<span class="p">,</span> aes<span class="p">(</span>x<span class="o">=</span>factor<span class="p">(</span><span class="m">1</span><span class="p">),</span> y<span class="o">=</span>Count<span class="p">,</span>fill<span class="o">=</span>factor<span class="p">(</span>Gender<span class="p">)))</span> <span class="o">+</span> geom_bar<span class="p">(</span>width<span class="o">=</span><span class="m">1</span><span class="p">,</span>stat<span class="o">=</span><span class="s">&quot;identity&quot;</span><span class="p">)</span> <span class="o">+</span> 
+xlab<span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> ylab<span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span>
+coord_polar<span class="p">(</span>theta<span class="o">=</span><span class="s">&quot;y&quot;</span><span class="p">)</span> <span class="o">+</span> labs<span class="p">(</span>fill<span class="o">=</span><span class="s">&quot;Gender&quot;</span><span class="p">)</span> <span class="o">+</span> ggtitle<span class="p">(</span><span class="s">&quot;Ratio of Interviewers by Gender&quot;</span><span class="p">)</span> <span class="o">+</span> scale_fill_discrete<span class="p">(</span><span class="s">&quot;Gender&quot;</span><span class="p">,</span>labels<span class="o">=</span>c<span class="p">(</span><span class="s">&quot;Female&quot;</span><span class="p">,</span> <span class="s">&quot;Male&quot;</span><span class="p">))</span>
+</pre></div>
+
+
+<p>These are just a few of the graphs that I created. Pretty simple stuff, but considering that 8 months ago my technical skills were nonexistent, it shows how far I've progressed in my learning.</p>
+<p>Quick rundown of useful stats using Rs mean(), sd(), and cor() functions:</p>
+<p>Mean age of all companies: 8.03 years</p>
+<p>Mean age of interviewed companies: 3.54 years</p>
+<p>Mean age of non-interviewed companies: 10.8 years</p>
+<p>Standard deviation of age of all companies: 10.08 years</p>
+<p>Standard deviation age of interviewed companies: 3.4 years</p>
+<p>Standard deviation age of non-interviewed companies: 11.8 years</p>
+<p>Size 2 represents the range from 11-50 employees, size 3 represents the range from 51-200 employees, and size 4 represents the range from 201-500 employees.</p>
+<p>Mean size of all companies: 3.18</p>
+<p>Mean size of interviewed companies: 2.46</p>
+<p>Mean size of non-interviewed companies: 3.62</p>
+<p>Standard deviation of size of all companies: 1.53</p>
+<p>Standard deviation size of interviewed companies: 1.13</p>
+<p>Standard deviation size of non-interviewed companies: 1.57</p>
+<p>Correlation between the age and the size of all companies: 68.7%</p>
+<p>Correlation between the age and the size of interviewed companies: 75.5%</p>
+<p>Correlation between the age and the size of non-interviewed companies: 65.4%</p>
+<h1><strong>Analysis and Conclusions</strong></h1>
+<p>The summary statistics show the stark contrast between the companies that I have interviewed with versus the companies that I have not had interviews with (i.e. the companies who I have applied to but not granted an interview with). Compared to the non-interviewed companies the companies that I did interview with are about 32% smaller and 67% younger, but I suppose my sample is quite a bit more biased than the population given that there are a great number of start-ups in my area.</p>
+<p>From a design and implementation perspective, I've learned a great deal about relational database design best practices, dealing with data types and formatting, and about writing scripts to retrieve relevant information. In addition, it's always a bit tricky navigating new packages or libraries for the first time. RMySQL and ggplot2 are common and standard, but I had no knowledge of them at the onset of this project. Luckily, R has an abundance of documentation and resources to get help. I have found that the more I do the easier it is to find solutions to problems and understand the reasoning behind my mistakes.</p>
+<p>From a research perspective this project has helped me to understand which methods of contact are more effective for connecting with the right people and showing me in which areas I can improve. For example, the most common reason for not being hired is my lack of seniority. This can only be fixed by time. The second most common reason for not being hired after an interview is that there existed a lack of mutual agreement. In my case, this was often regarding the type of contract. For example, many companies that I've interviewed with are looking only for interns, which turns out to be about a 6 month contract, and I am looking for a full-time position. Because of this disagreement, further negotiations were not pursued. Given this information, I have some leeway in how I decide to make decisions in the future.</p>
+<p>This project has been interesting because I had the chance to personally collect the data, and because the results are directly applicable to what I am trying to accomplish - gaining experience in data analysis, and starting my career.  </p>
+    </div><!-- /.entry-content -->
+    
+
+  </article>
+</section>
+
+        <section id="extras" class="body">
+        
+        
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+
+
+
+</body>
+</html>
